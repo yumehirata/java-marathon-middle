@@ -10,7 +10,6 @@
 <table>
 <tr><th><h2>プロ野球<br>セントラル・リーグ一覧</h2></th></tr>
 <tr><th>
-<!-- for Eachで取得したものを受け取ったリストの中身を回す -->
 <c:forEach var="team" items="${teamList}">
 	<a href="${pageContext.request.contextPath}/cl/toOutput?id=${team.id}">
 	<c:out value="${team.teamName}"/></a><br>

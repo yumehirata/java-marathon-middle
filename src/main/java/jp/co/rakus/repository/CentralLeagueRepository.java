@@ -11,6 +11,12 @@ import org.springframework.stereotype.Repository;
 
 import jp.co.rakus.domain.BaseballTeam;
 
+/**
+ * baseball_teamsテーブルから要素を検索してくるリポジトリ.
+ * 
+ * @author yume.hirata
+ *
+ */
 @Repository
 public class CentralLeagueRepository {
 	
@@ -28,6 +34,12 @@ public class CentralLeagueRepository {
 		return baseballTeam;
 	};
 	
+	/**
+	 * 指定されたidで一件検索する.
+	 * 
+	 * @param id	指定用のID
+	 * @return	検索されたチームを返す
+	 */
 	public BaseballTeam load(Integer id) {
 		String sql = "SELECT id,league_name,team_name,headquarters,inauguration,history FROM baseball_teams WHERE id=:id";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("id",id);
@@ -37,6 +49,11 @@ public class CentralLeagueRepository {
 		return baseballTeam;
 	}
 	
+	/**
+	 * 全件検索を行う.
+	 * 
+	 * @return	検索されたチームを返す
+	 */
 	public List<BaseballTeam> findAll(){
 		String sql = "SELECT id,league_name,team_name,headquarters,inauguration,history FROM baseball_teams";
 		

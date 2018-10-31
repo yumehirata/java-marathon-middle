@@ -13,8 +13,9 @@
 <c:out value="${baseballTeam.headquarters}"/>
 <h3>発足</h3>
 <c:out value="${baseballTeam.inauguration}"/>
-<h3>歴史</h3>
+<h3>歴史</h3><pre>
 <c:out value="${baseballTeam.history}"/>
-<a href="${pageContext.request.contextPath}/cl/">戻る</a>
+<br></pre>
+<input type="button" onclick="location.href=${pageContext.request.contextPath}/cl/"value="戻る">
 </body>
 </html>
