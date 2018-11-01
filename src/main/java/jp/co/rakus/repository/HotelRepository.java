@@ -42,7 +42,7 @@ public class HotelRepository {
 	 * 入力された価格以下のホテルを検索する.
 	 * 
 	 * @param price	検索キーとなる価格
-	 * @return	検索されたホテルを返す
+	 * @return	検索されたホテル一覧を返す
 	 */
 	public List<Hotel> findByPrice(Integer price) {
 		String sql = "SELECT id,area_name,hotel_name,address,nearest_station,price,parking FROM hotels WHERE price <= :price ORDER BY price";

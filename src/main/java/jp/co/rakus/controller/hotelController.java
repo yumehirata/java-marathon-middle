@@ -37,11 +37,13 @@ public class HotelController {
 	 * 検索結果とともに画面を再表示する.
 	 * 
 	 * @param price	検索キーとなる価格
+	 * @param model　結果画面に引き渡すための変数
 	 * @return	検索結果画面
 	 */
 	@RequestMapping("/result")
 	public String result(Integer price,Model model) {
 		List<Hotel> hotelList = repository.findByPrice(price);
+		model.addAttribute("price",price);
 		model.addAttribute("hotelList",hotelList);
 		
 		return "searchHotel";
