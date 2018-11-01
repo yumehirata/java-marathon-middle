@@ -21,7 +21,7 @@ public class Hotel {
 	private Integer price;
 	/** 駐車場有無 */
 	private String parking;
-	
+
 	@Override
 	public String toString() {
 		return "Hotel [id=" + id + ", areaName=" + areaName + ", hotelName=" + hotelName + ", address=" + address
