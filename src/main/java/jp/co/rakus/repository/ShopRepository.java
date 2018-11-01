@@ -45,7 +45,7 @@ public class ShopRepository {
 	 * @param gender	検索キーとなる性別
 	 * @return	検索結果のリストを返す
 	 */
-	public List<Shop> findByColor(Integer gender,String color) {
+	public List<Shop> findByGenderAndColor(Integer gender,String color) {
 		String sql = "SELECT id,category,genre,gender,color,price,size FROM shops WHERE gender=:gender AND color=:color ORDER BY price";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("gender", gender).addValue("color", color);
 		

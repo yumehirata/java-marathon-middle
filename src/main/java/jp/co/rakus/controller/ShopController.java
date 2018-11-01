@@ -41,9 +41,9 @@ public class ShopController {
 	 * @param model		結果を引き渡すための変数
 	 * @return	検索結果画面
 	 */
-	@RequestMapping("/toResult")
-	public String toResult(Integer gender,String color,Model model) {
-		List<Shop> shopList = repository.findByColor(gender, color);
+	@RequestMapping("/plusResult")
+	public String plusResult(Integer gender,String color,Model model) {
+		List<Shop> shopList = repository.findByGenderAndColor(gender, color);
 		model.addAttribute("shopList",shopList);
 		
 		return "searchShop";

@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +9,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>洋服.shop</h2>
-	<br>
-	<form action="${pageContext.request.contextPath}/shop/plusResult" method="post">
-		好きな色を選択してください<br> 
-		<input type="radio" name="gender" value="0" checked>男<br>
-		<input type="radio" name="gender" value="1">女
-		<select name="color">
-			<option value="赤">赤</option>
-			<option value="青">青</option>
-			<option value="黄">黄</option>
-			<option value="白">白</option>
-		</select> <input type="submit" value="検索">
-	</form>
-	
+
+<h2>洋服.shop</h2><br>
+
+<form:form modelAttribute="shopForm" action="${pageContext.request.contextPath}/shopItem/searchedItem">
+好きな色を選択してください<br>
+	<form:radiobuttons path="gender" items="${genderMap}" delimiter="<br>"/>
+	<form:select path="color">
+	<form:options items="${colorList}"/>
+	</form:select>
+	<input type="submit" value="検索">
+</form:form>
 <hr>	
 
 <c:forEach var="shop" items="${shopList}">

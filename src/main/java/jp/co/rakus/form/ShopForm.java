@@ -1,32 +1,36 @@
-package jp.co.rakus.domain;
+package jp.co.rakus.form;
 
 /**
- * ショップアイテムの情報を表すドメイン.
+ * searchShop2で選択されたリクエストパラメータを受け取る.
  * 
  * @author yume.hirata
  *
  */
-public class Shop {
+public class ShopForm {
 	/** ID */
-	private Integer id;
+	private String id;
 	/** カテゴリー */
 	private String category;
 	/** ジャンル */
 	private String genre;
 	/** 性別 */
-	private Integer gender;
+	private String gender;
 	/** 色 */
 	private String color;
 	/** 価格 */
-	private Integer price;
+	private String price;
 	/** サイズ */
 	private String size;
 
-	public Integer getId() {
+	public int getIntGender() {
+		return Integer.parseInt(gender);
+	}
+	
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -46,11 +50,11 @@ public class Shop {
 		this.genre = genre;
 	}
 
-	public Integer getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(Integer gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
@@ -62,11 +66,11 @@ public class Shop {
 		this.color = color;
 	}
 
-	public Integer getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(Integer price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
@@ -80,8 +84,7 @@ public class Shop {
 
 	@Override
 	public String toString() {
-		return "Shop [id=" + id + ", category=" + category + ", genre=" + genre + ", gender=" + gender + ", color="
+		return "ShopForm [id=" + id + ", category=" + category + ", genre=" + genre + ", gender=" + gender + ", color="
 				+ color + ", price=" + price + ", size=" + size + "]";
 	}
-
 }
