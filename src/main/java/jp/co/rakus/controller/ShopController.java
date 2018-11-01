@@ -33,6 +33,14 @@ public class ShopController {
 		return "searchShop";
 	}
 	
+	/**
+	 * 検索結果とともに画面を再表示する.
+	 * 
+	 * @param gender	検索キーとなる性別
+	 * @param color		検索キーとなる色
+	 * @param model		結果を引き渡すための変数
+	 * @return	検索結果画面
+	 */
 	@RequestMapping("/toResult")
 	public String toResult(Integer gender,String color,Model model) {
 		List<Shop> shopList = repository.findByColor(gender, color);

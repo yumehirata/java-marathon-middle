@@ -36,7 +36,7 @@
 		</tr>
 		<tr>
 			<th>価格</th>
-			<td><fmt:formatNumber value="${shop.price}" pattern="###,####"/></td>
+			<td><fmt:formatNumber value="${shop.price}" pattern="###,###"/></td>
 		</tr>
 	</table>
 </c:forEach>
