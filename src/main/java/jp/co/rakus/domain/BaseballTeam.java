@@ -1,7 +1,7 @@
 package jp.co.rakus.domain;
 
 /**
- * 球団の要素を設定するドメイン.
+ * 球団の情報を表すドメイン.
  * 
  * @author yume.hirata
  *

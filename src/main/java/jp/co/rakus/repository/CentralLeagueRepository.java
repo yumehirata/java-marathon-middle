@@ -23,6 +23,9 @@ public class CentralLeagueRepository {
 	@Autowired
 	private NamedParameterJdbcTemplate template;
 	
+	/**
+	 * RowMapperを定義
+	 */
 	private static final RowMapper<BaseballTeam> BASEBALLTEAM_ROW_MAPPER = (rs,i) ->{
 		BaseballTeam baseballTeam = new BaseballTeam();
 		baseballTeam.setId(rs.getInt("id"));

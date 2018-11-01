@@ -8,13 +8,12 @@
 </head>
 <body>
 <table>
-<tr><th><h2>プロ野球<br>セントラル・リーグ一覧</h2></th></tr>
+<tr><th><h3>プロ野球<br>セントラル・リーグ一覧</h3></th></tr>
 <tr><th>
 <c:forEach var="team" items="${teamList}">
 	<a href="${pageContext.request.contextPath}/cl/toOutput?id=${team.id}">
 	<c:out value="${team.teamName}"/></a><br>
 </c:forEach>
-
 </th></tr></table>
 </body>
 </html>
